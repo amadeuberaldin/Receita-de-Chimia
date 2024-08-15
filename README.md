@@ -1,4 +1,4 @@
-# doce_abobora
+# Receitas de Chimia
 
 A new Flutter project.
 
