@@ -18,7 +18,7 @@ class ReceitaAboboraScreenState extends State<ReceitaAboboraScreen> {
     setState(() {
       result = '''
 Para:
-- $pumpkinWeight g de uva
+- $pumpkinWeight g de Abobora
 - $sugar g de açúcar
 - $coconut g de coco ralado
 

@@ -18,12 +18,12 @@ class ReceitaAbacaxiState extends State<ReceitaAbacaxiScreen> {
     setState(() {
       result = '''
 Para:
-- $pineapleWeight g de uva
+- $pineapleWeight g de Abacaxi
 - $sugar g de açúcar
 - $coconut g de coco ralado
 
 Modo de preparo:
-1. Ponha a polpa da Abobora em uma panela.
+1. Ponha a polpa do Abacaxi em uma panela.
 2. Adicione o açúcar.
 3. Cozinhe em fogo baixo, mexendo sempre, até que a mistura fique consistente.
 4. Adicione o coco ralado
