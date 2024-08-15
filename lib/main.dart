@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'receita_abobora.dart'; // Criaremos este arquivo a seguir
+import 'package:receitas_de_chimia/receita_abobora.dart';
+import 'package:receitas_de_chimia/receita_uva.dart';
+import 'package:receitas_de_chimia/receita_abacaxi.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Receitas de Chimia',
       home: HomeScreen(),
     );
@@ -16,11 +19,12 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Receitas de Chimia'),
+        title: const Text('Receitas de Chimia'),
       ),
       body: Center(
         child: Column(
@@ -30,15 +34,33 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ReceitaAboboraScreen()),
+                  MaterialPageRoute(builder: (context) => const ReceitaAboboraScreen()),
                 );
               },
-              child: Text('Abóbora com Coco'),
+              child: const Text('Abóbora com Coco'),
             ),
-            // Adicione mais botões aqui para outras receitas
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ReceitaUvaScreen()),
+                );
+              },
+              child: const Text('Doce de Uva'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ReceitaAbacaxiScreen()),
+                );
+              },
+              child: const Text('Abacaxi com Coco'),
+            ),
           ],
         ),
       ),
     );
   }
 }
+

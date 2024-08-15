@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
 
-class ReceitaAboboraScreen extends StatefulWidget {
-  const ReceitaAboboraScreen({super.key});
+class ReceitaUvaScreen extends StatefulWidget {
+  const ReceitaUvaScreen({super.key});
   @override
-  ReceitaAboboraScreenState createState() => ReceitaAboboraScreenState();
+  ReceitaUvaScreenState createState() => ReceitaUvaScreenState();
 }
 
-class ReceitaAboboraScreenState extends State<ReceitaAboboraScreen> {
+class ReceitaUvaScreenState extends State<ReceitaUvaScreen> {
   final TextEditingController _controller = TextEditingController();
   String result = '';
 
   void calculateProportions() {
-    double pumpkinWeight = double.tryParse(_controller.text) ?? 0;
-    double sugar = (pumpkinWeight * 750) / 1000;
-    double coconut = (pumpkinWeight * 150) / 1000;
+    double grapeWeight = double.tryParse(_controller.text) ?? 0;
+    double sugar = (grapeWeight * 700) / 1000;
 
     setState(() {
       result = '''
 Para:
-- $pumpkinWeight g de uva
+- $grapeWeight g de uva
 - $sugar g de açúcar
-- $coconut g de coco ralado
 
 Modo de preparo:
-1. Ponha a polpa da Abobora em uma panela.
+1. Ponha a polpa da uva em uma panela.
 2. Adicione o açúcar.
 3. Cozinhe em fogo baixo, mexendo sempre, até que a mistura fique consistente.
-4. Adicione o coco ralado
-5. Deixe esfriar antes de armazenar.
+4. Deixe esfriar antes de armazenar.
 ''';
     });
   }
@@ -36,7 +33,7 @@ Modo de preparo:
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Abóbora com Coco'),
+        title: const Text('Doce de Uva'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -46,7 +43,7 @@ Modo de preparo:
               controller: _controller,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: 'Peso da Abóbora (g)',
+                labelText: 'Peso da Uva (g)',
                 border: OutlineInputBorder(),
               ),
             ),

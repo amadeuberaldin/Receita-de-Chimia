@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-class ReceitaAboboraScreen extends StatefulWidget {
-  const ReceitaAboboraScreen({super.key});
+class ReceitaAbacaxiScreen extends StatefulWidget {
+  const ReceitaAbacaxiScreen({super.key});
   @override
-  ReceitaAboboraScreenState createState() => ReceitaAboboraScreenState();
+  ReceitaAbacaxiState createState() => ReceitaAbacaxiState();
 }
 
-class ReceitaAboboraScreenState extends State<ReceitaAboboraScreen> {
+class ReceitaAbacaxiState extends State<ReceitaAbacaxiScreen> {
   final TextEditingController _controller = TextEditingController();
   String result = '';
 
   void calculateProportions() {
-    double pumpkinWeight = double.tryParse(_controller.text) ?? 0;
-    double sugar = (pumpkinWeight * 750) / 1000;
-    double coconut = (pumpkinWeight * 150) / 1000;
+    double pineapleWeight = double.tryParse(_controller.text) ?? 0;
+    double sugar = (pineapleWeight * 750) / 1000;
+    double coconut = (pineapleWeight * 150) / 1000;
 
     setState(() {
       result = '''
 Para:
-- $pumpkinWeight g de uva
+- $pineapleWeight g de uva
 - $sugar g de açúcar
 - $coconut g de coco ralado
 
@@ -36,7 +36,7 @@ Modo de preparo:
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Abóbora com Coco'),
+        title: const Text('Doce de Abacaxi'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -46,7 +46,7 @@ Modo de preparo:
               controller: _controller,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
-                labelText: 'Peso da Abóbora (g)',
+                labelText: 'Peso do Abacaxi (g)',
                 border: OutlineInputBorder(),
               ),
             ),
