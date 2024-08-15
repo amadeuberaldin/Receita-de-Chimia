@@ -23,8 +23,9 @@ Para:
 Modo de preparo:
 1. Ponha a polpa da uva em uma panela.
 2. Adicione o açúcar.
-3. Cozinhe em fogo baixo, mexendo sempre, até que a mistura fique consistente.
-4. Deixe esfriar antes de armazenar.
+3. Adicione o suco de um limão
+4. Cozinhe em fogo baixo, mexendo sempre, até que a mistura fique consistente.
+5. Deixe esfriar antes de armazenar.
 ''';
     });
   }

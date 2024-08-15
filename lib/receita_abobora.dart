@@ -13,7 +13,7 @@ class ReceitaAboboraScreenState extends State<ReceitaAboboraScreen> {
   void calculateProportions() {
     double pumpkinWeight = double.tryParse(_controller.text) ?? 0;
     double sugar = (pumpkinWeight * 750) / 1000;
-    double coconut = (pumpkinWeight * 150) / 1000;
+    double coconut = (pumpkinWeight * 100) / 1000;
 
     setState(() {
       result = '''
@@ -25,9 +25,10 @@ Para:
 Modo de preparo:
 1. Ponha a polpa da Abobora em uma panela.
 2. Adicione o açúcar.
-3. Cozinhe em fogo baixo, mexendo sempre, até que a mistura fique consistente.
-4. Adicione o coco ralado
-5. Deixe esfriar antes de armazenar.
+3. Adicione o suco de um limão
+4. Cozinhe em fogo baixo, mexendo sempre, até que a mistura fique consistente.
+5. Adicione o coco ralado
+6. Deixe esfriar antes de armazenar.
 ''';
     });
   }
