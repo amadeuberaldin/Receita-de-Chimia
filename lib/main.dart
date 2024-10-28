@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:receitas_de_chimia/receita_abobora.dart';
 import 'package:receitas_de_chimia/receita_uva.dart';
 import 'package:receitas_de_chimia/receita_abacaxi.dart';
+import 'package:receitas_de_chimia/receita_morango.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,15 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: const Text('Doce de Uva'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ReceitaMorangoScreen()),
+                );
+              },
+              child: const Text('Doce de Morango'),
             ),
             ElevatedButton(
               onPressed: () {
