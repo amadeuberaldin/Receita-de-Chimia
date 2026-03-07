@@ -1,40 +1,42 @@
-# 📖 Receita de Chimia
+# 📖 Livro de Receitas – Chimias Artesanais
 
-Aplicativo desenvolvido em Flutter para cálculo e preparo de chimias artesanais caseiras.
-
-O projeto nasceu com foco em receitas reais de família, permitindo calcular proporções automaticamente com base no peso da fruta e visualizar informações nutricionais por porção.
+Aplicativo Flutter desenvolvido para cálculo e preparo de chimias artesanais, baseado em receitas reais e proporções por peso.
 
 ---
 
-## 🎯 Objetivo do Projeto
+## ✨ Funcionalidades
 
-Criar um aplicativo simples, elegante e funcional para:
-
-- Padronizar receitas caseiras
-- Automatizar o cálculo de açúcar
-- Exibir informações nutricionais
-- Organizar o modo de preparo de forma clara
-
----
-
-## 📱 Funcionalidades
-
-✔ Cálculo automático da proporção de açúcar
-✔ Informações nutricionais por 100g
-✔ Informações nutricionais por porção de 5g
-✔ Modo de preparo organizado em etapas
-✔ Interface moderna com tema escuro
-✔ Estrutura modular por telas
+- 📌 Cálculo automático de açúcar por peso da polpa
+- 📊 Informação nutricional por 100g
+- 🍓 Porção individual de 5g
+- 🥄 Processo de preparo detalhado por receita
+- 🎨 Interface moderna com identidade visual própria
 
 ---
 
-## 🍓 Receitas Disponíveis
+## 📷 Screenshots
 
-- Abóbora com coco
-- Abacaxi com coco
-- Morango
-- Uva
-- Goiaba
+### 🏠 Menu Principal
+![Menu Principal](assets_readme/menu_principal.png)
+
+### 🍯 Menu de Chimias
+![Menu Chimia](assets_readme/menu_chimia.png)
+
+### 🎃 Abóbora com Coco
+![Abóbora](assets_readme/abobora.png)
+
+### 🍓 Chimia de Morango
+![Morango](assets_readme/morango.png)
+
+### 🍇 Chimia de Uva
+![Uva](assets_readme/uva.png)
+
+### 🥭 Chimia de Goiaba
+![Goiaba](assets_readme/goiaba.png)
+
+### 🍍 Abacaxi com Coco
+![Abacaxi](assets_readme/abacaxi.png)
+
 ---
 
 ## 🛠 Tecnologias Utilizadas
@@ -42,45 +44,9 @@ Criar um aplicativo simples, elegante e funcional para:
 - Flutter
 - Dart
 - Material Design
-- Estrutura modular por Screens
-- Layout responsivo
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🚀 Objetivo
 
-lib/
-├── main.dart
-└── screens/
-├── home_screen.dart
-├── about_screen.dart
-├── receita_abobora.dart
-├── receita_abacaxi.dart
-├── receita_morango.dart
-├── receita_uva.dart
-└── receita_goiaba.dart
-
-
----
-
-## 📌 Status
-
-Projeto em desenvolvimento ativo.
-Expansão futura para novas categorias como receitas fit e outras receitas artesanais.
-
----
-
-## 🚀 Próximas Melhorias
-
-- Refinamento visual
-- Melhor organização da lógica de cálculo
-- Possível sistema de apoio ao projeto
-- Expansão de categorias
-- Publicação na Google Play
-
----
-
-## 👨‍💻 Autor
-
-Amadeu Beraldin
-Desenvolvedor em evolução, construindo projetos reais e funcionais.
+Projeto criado para estudo de Flutter, organização de layout e publicação futura na Google Play Store.

@@ -22,7 +22,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.doce_abobora"
-        minSdkVersion 21 // substitua flutter.minSdkVersion por 21
+        minSdkVersion flutter.minSdkVersion // substitua flutter.minSdkVersion por 21
         targetSdkVersion 34 // substitua flutter.targetSdkVersion por 30
         versionCode 1 // mantenha flutter.versionCode se estiver definido corretamente em flutter.gradle
         versionName "1.0" // mantenha flutter.versionName se estiver definido corretamente em flutter.gradle

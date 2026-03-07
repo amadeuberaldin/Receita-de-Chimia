@@ -1,0 +1,239 @@
+import 'package:flutter/material.dart';
+import 'package:receitas_de_chimia/receita_abobora.dart';
+import 'package:receitas_de_chimia/receita_uva.dart';
+import 'package:receitas_de_chimia/receita_abacaxi.dart';
+import 'package:receitas_de_chimia/receita_morango.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Receitas de Chimia',
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          brightness: Brightness.light,
+        ),
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          elevation: 0,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18,
+              vertical: 14,
+            ),
+            textStyle: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        cardTheme: CardThemeData(
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          brightness: Brightness.dark,
+        ),
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Receitas de Chimia'),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Theme.of(context).colorScheme.surface,
+              Theme.of(context).colorScheme.surfaceContainerHighest,
+            ],
+          ),
+        ),
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            _HomeHeader(),
+            const SizedBox(height: 14),
+            _ReceitaCard(
+              title: "Abóbora com Coco",
+              subtitle:
+                  "750g açúcar + 100g coco ralado para 1kg da polpa da abóbora",
+              imagePath: "assets/images/abobora.png",
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ReceitaAboboraScreen()),
+              ),
+            ),
+            const SizedBox(height: 12),
+            _ReceitaCard(
+              title: "Doce de Uva",
+              subtitle: "700g açúcar para 1kg de uvas",
+              imagePath: "assets/images/uva.png",
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ReceitaUvaScreen()),
+              ),
+            ),
+            const SizedBox(height: 12),
+            _ReceitaCard(
+              title: "Doce de Morango",
+              subtitle: "650g açúcar para 1kg de morangos",
+              imagePath: "assets/images/morango.png",
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ReceitaMorangoScreen()),
+              ),
+            ),
+            const SizedBox(height: 12),
+            _ReceitaCard(
+              title: "Abacaxi com Coco",
+              subtitle:
+                  "700g açúcar + 100g coco para 1kg de abacaxi descascado",
+              imagePath: "assets/images/abacaxi.png",
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ReceitaAbacaxiScreen()),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _HomeHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
+    return Container(
+      padding: const EdgeInsets.all(18),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(24),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            cs.primaryContainer,
+            cs.secondaryContainer,
+          ],
+        ),
+      ),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Receitas de Chimia",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),
+          ),
+          SizedBox(height: 6),
+          Text(
+            "Escolha uma receita e calcule as proporções com base no peso.",
+            style: TextStyle(fontSize: 14),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ReceitaCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String imagePath;
+  final VoidCallback onTap;
+
+  const _ReceitaCard({
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
+    return Card(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 56,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: cs.primaryContainer,
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title,
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w800)),
+                    const SizedBox(height: 4),
+                    Text(subtitle,
+                        style: TextStyle(color: cs.onSurfaceVariant)),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

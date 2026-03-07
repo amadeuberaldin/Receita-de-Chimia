@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:receitas_de_chimia/receita_abobora.dart';
-import 'package:receitas_de_chimia/receita_uva.dart';
-import 'package:receitas_de_chimia/receita_abacaxi.dart';
-import 'package:receitas_de_chimia/receita_morango.dart';
+import 'package:receitas_de_chimia/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,67 +7,59 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Receitas de Chimia',
-      home: HomeScreen(),
-    );
-  }
-}
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Receitas de Chimia'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ReceitaAboboraScreen()),
-                );
-              },
-              child: const Text('Abóbora com Coco'),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Receitas de Chimia',
+      themeMode: ThemeMode.system,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          brightness: Brightness.light,
+        ),
+        appBarTheme: const AppBarTheme(
+          centerTitle: true,
+          elevation: 0,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ReceitaUvaScreen()),
-                );
-              },
-              child: const Text('Doce de Uva'),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 18,
+              vertical: 14,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ReceitaMorangoScreen()),
-                );
-              },
-              child: const Text('Doce de Morango'),
+            textStyle: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ReceitaAbacaxiScreen()),
-                );
-              },
-              child: const Text('Abacaxi com Coco'),
-            ),
-          ],
+          ),
+        ),
+        cardTheme: CardThemeData(
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
       ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          brightness: Brightness.dark,
+        ),
+      ),
+      home: const HomeScreen(),
     );
   }
 }
-
