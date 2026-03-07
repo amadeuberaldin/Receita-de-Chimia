@@ -1,16 +1,86 @@
-# Receitas de Chimia
+# 📖 Receita de Chimia
 
-A new Flutter project.
+Aplicativo desenvolvido em Flutter para cálculo e preparo de chimias artesanais caseiras.
 
-## Getting Started
+O projeto nasceu com foco em receitas reais de família, permitindo calcular proporções automaticamente com base no peso da fruta e visualizar informações nutricionais por porção.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🎯 Objetivo do Projeto
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Criar um aplicativo simples, elegante e funcional para:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Padronizar receitas caseiras
+- Automatizar o cálculo de açúcar
+- Exibir informações nutricionais
+- Organizar o modo de preparo de forma clara
+
+---
+
+## 📱 Funcionalidades
+
+✔ Cálculo automático da proporção de açúcar
+✔ Informações nutricionais por 100g
+✔ Informações nutricionais por porção de 5g
+✔ Modo de preparo organizado em etapas
+✔ Interface moderna com tema escuro
+✔ Estrutura modular por telas
+
+---
+
+## 🍓 Receitas Disponíveis
+
+- Abóbora com coco
+- Abacaxi com coco
+- Morango
+- Uva
+- Goiaba
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- Flutter
+- Dart
+- Material Design
+- Estrutura modular por Screens
+- Layout responsivo
+
+---
+
+## 📂 Estrutura do Projeto
+
+lib/
+├── main.dart
+└── screens/
+├── home_screen.dart
+├── about_screen.dart
+├── receita_abobora.dart
+├── receita_abacaxi.dart
+├── receita_morango.dart
+├── receita_uva.dart
+└── receita_goiaba.dart
+
+
+---
+
+## 📌 Status
+
+Projeto em desenvolvimento ativo.
+Expansão futura para novas categorias como receitas fit e outras receitas artesanais.
+
+---
+
+## 🚀 Próximas Melhorias
+
+- Refinamento visual
+- Melhor organização da lógica de cálculo
+- Possível sistema de apoio ao projeto
+- Expansão de categorias
+- Publicação na Google Play
+
+---
+
+## 👨‍💻 Autor
+
+Amadeu Beraldin
+Desenvolvedor em evolução, construindo projetos reais e funcionais.
