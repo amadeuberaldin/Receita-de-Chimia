@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:receitas_de_chimia/screens/receita_abacaxi.dart';
-import 'package:receitas_de_chimia/screens/receita_abobora.dart';
-import 'package:receitas_de_chimia/screens/receita_morango.dart';
-import 'package:receitas_de_chimia/screens/receita_uva.dart';
-import 'package:receitas_de_chimia/screens/receita_goiaba.dart';
+import 'package:receitas_familia_beraldin/screens/receita_abacaxi.dart';
+import 'package:receitas_familia_beraldin/screens/receita_abobora.dart';
+import 'package:receitas_familia_beraldin/screens/receita_morango.dart';
+import 'package:receitas_familia_beraldin/screens/receita_uva.dart';
+import 'package:receitas_familia_beraldin/screens/receita_goiaba.dart';
 
 class ChimiaMenuScreen extends StatelessWidget {
   const ChimiaMenuScreen({super.key});

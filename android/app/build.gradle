@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.doce_abobora"
+    namespace = "com.amadeuberaldin.receitasfamilia"
     compileSdk = 34 // substitua flutter.compileSdkVersion por 30
 
     ndkVersion = flutter.ndkVersion
@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.doce_abobora"
+        applicationId = "com.amadeuberaldin.receitasfamilia"
         minSdkVersion flutter.minSdkVersion // substitua flutter.minSdkVersion por 21
         targetSdkVersion 34 // substitua flutter.targetSdkVersion por 30
         versionCode 1 // mantenha flutter.versionCode se estiver definido corretamente em flutter.gradle

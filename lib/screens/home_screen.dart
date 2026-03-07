@@ -1,55 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:receitas_de_chimia/screens/chimia_menu_screen.dart';
+import 'package:receitas_familia_beraldin/screens/chimia_menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  void _showAppMenu(BuildContext context, Offset position) async {
-    final selected = await showMenu<String>(
-      context: context,
-      position: RelativeRect.fromLTRB(
-        position.dx,
-        position.dy,
-        position.dx,
-        position.dy,
-      ),
-      items: const [
-        PopupMenuItem(
-          value: 'sobre',
-          child: ListTile(
-            leading: Icon(Icons.info_outline),
-            title: Text('Sobre'),
-            contentPadding: EdgeInsets.zero,
-          ),
-        ),
-        PopupMenuItem(
-          value: 'github',
-          child: ListTile(
-            leading: Icon(Icons.code),
-            title: Text('GitHub'),
-            contentPadding: EdgeInsets.zero,
-          ),
-        ),
-      ],
-    );
-
-    if (!context.mounted) return;
-
-    if (selected == 'sobre') {
-      showAboutDialog(
-        context: context,
-        applicationName: 'Receitas de Chimia',
-        applicationVersion: '1.0.0',
-        applicationLegalese: 'Desenvolvido por Amadeu Beraldin',
-      );
-    } else if (selected == 'github') {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Depois vamos ligar seu GitHub aqui.'),
-        ),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,29 +12,52 @@ class HomeScreen extends StatelessWidget {
           'Início',
           style: TextStyle(fontWeight: FontWeight.w700),
         ),
-        actions: [
-          Builder(
-            builder: (context) {
-              return IconButton(
-                icon: const Icon(Icons.more_vert),
-                tooltip: 'Menu',
-                onPressed: () {
-                  final RenderBox button =
-                      context.findRenderObject() as RenderBox;
-                  final RenderBox overlay = Navigator.of(context)
-                      .overlay!
-                      .context
-                      .findRenderObject() as RenderBox;
-
-                  final Offset position =
-                      button.localToGlobal(Offset.zero, ancestor: overlay);
-
-                  _showAppMenu(context, position);
-                },
-              );
-            },
-          ),
-        ],
+        actions: MediaQuery.sizeOf(context).width < 200
+            ? []
+            : [
+                PopupMenuButton<String>(
+                  tooltip: 'Menu',
+                  icon: const Icon(Icons.more_vert),
+                  onSelected: (selected) {
+                    if (selected == 'sobre') {
+                      showAboutDialog(
+                        context: context,
+                        applicationName: 'Receitas da Família Beraldin',
+                        applicationVersion: '1.0.0',
+                        applicationLegalese: 'Desenvolvido por Amadeu Beraldin',
+                      );
+                    } else if (selected == 'github') {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Depois vamos ligar seu GitHub aqui.'),
+                        ),
+                      );
+                    }
+                  },
+                  itemBuilder: (context) => const [
+                    PopupMenuItem<String>(
+                      value: 'sobre',
+                      child: Row(
+                        children: [
+                          Icon(Icons.info_outline),
+                          SizedBox(width: 8),
+                          Text('Sobre'),
+                        ],
+                      ),
+                    ),
+                    PopupMenuItem<String>(
+                      value: 'github',
+                      child: Row(
+                        children: [
+                          Icon(Icons.code),
+                          SizedBox(width: 8),
+                          Text('GitHub'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
       ),
       body: Container(
         decoration: BoxDecoration(

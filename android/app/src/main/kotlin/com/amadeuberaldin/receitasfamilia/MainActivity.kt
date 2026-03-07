@@ -1,4 +1,4 @@
-package com.example.doce_abobora
+package com.amadeuberaldin.receitasfamilia
 
 import io.flutter.embedding.android.FlutterActivity
 
