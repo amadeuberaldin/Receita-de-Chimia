@@ -143,7 +143,7 @@ class _ReceitaAboboraScreenState extends State<ReceitaAboboraScreen> {
                   'Adicione o açúcar e misture bem.',
                   'Acrescente o suco de 1 limão.',
                   'Continue cozinhando em fogo baixo, mexendo sempre.',
-                  'Quando a espuma começar a diminuir, adicione o coco ralado.',
+                  'Quando parar de criar espuma, adicione o coco ralado.',
                   'Mexa até atingir o ponto desejado.',
                   'Deixe esfriar antes de armazenar.',
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receitas_familia_beraldin/screens/chimia_menu_screen.dart';
+import 'package:receitas_familia_beraldin/screens/about_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,16 +21,17 @@ class HomeScreen extends StatelessWidget {
                   icon: const Icon(Icons.more_vert),
                   onSelected: (selected) {
                     if (selected == 'sobre') {
-                      showAboutDialog(
-                        context: context,
-                        applicationName: 'Receitas da Família Beraldin',
-                        applicationVersion: '1.0.0',
-                        applicationLegalese: 'Desenvolvido por Amadeu Beraldin',
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const AboutScreen(),
+                        ),
                       );
                     } else if (selected == 'github') {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('Depois vamos ligar seu GitHub aqui.'),
+                          content: Text(
+                              'Use a tela Sobre para acessar o GitHub do projeto.'),
                         ),
                       );
                     }
